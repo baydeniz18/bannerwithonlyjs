@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .myDiv{
+            width: 100vw;
+            height: 400px;
+            background-image: url('image-1.jpg');
+            background-position: center;
+            background-size: contain;
+        }
+    </style>
+
+</head>
+
+
+
+<body>
+    
+    <div class="myDiv"></div>
+
+    <script>
+
+        images = ['image-1.jpg','image-2.jpg']
+
+        index = 0 
+
+        function changeSlide(){
+
+            let length = images.length 
+
+            if(index == length){
+                index = 0
+            }
+
+
+            let element = document.getElementsByClassName('myDiv')[0]
+            
+            element.style.backgroundImage = "url('"+images[index]+"')"
+            index = index + 1
+
+            setTimeout(() => {
+                changeSlide()
+            }, 5000);
+
+        }
+
+        changeSlide()
+
+    </script>
+
+</body>
+</html>
